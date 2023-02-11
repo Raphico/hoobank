@@ -33,7 +33,7 @@ function Navbar() {
 
       <ul 
         id="primary-navigation" 
-        className="primary-navigation"
+        className="primary-navigation flex"
         role="list"
         data-visible={showNav}
       >
