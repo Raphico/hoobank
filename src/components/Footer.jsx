@@ -1,5 +1,6 @@
 import { facebook, instagram, linkedin, logo, twitter } from "../assets"
 import { motion } from "framer-motion"
+import variant from "../utils/motion"
 
 function Footer() {
   const style = {
@@ -9,9 +10,8 @@ function Footer() {
   return (
     <motion.footer 
       className="footer flow"
-      initial={{ y: "10%", opacity: 0 }}
-      whileInView={{ y: "0", opacity: 1 }}
-      transition={{ type: "tween" }}  
+      initial={variant.hidden}
+      whileInView={variant.show}
     >
       <div className="footer-1 flex">
         <div className="footer-text flow">

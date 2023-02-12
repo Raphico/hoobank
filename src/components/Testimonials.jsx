@@ -1,6 +1,7 @@
 import { testimonials } from "../constants"
 import Testimonial from "./Testimonial"
 import { motion } from "framer-motion"
+import variant from "../utils/motion"
 
 function Testimonials() {
   const testimonialElements = testimonials.map(testimonial => {
@@ -16,9 +17,8 @@ function Testimonials() {
   return (
     <motion.div 
       className="flow"
-      initial={{ y: "10%", opacity: 0 }}
-      whileInView={{ y: "0", opacity: 1 }}
-      transition={{ type: "tween" }}
+      initial={variant.hidden}
+      whileInView={variant.show}
     >
       <h2 className="fs-500 fw-600 text-center">
         Testimonials

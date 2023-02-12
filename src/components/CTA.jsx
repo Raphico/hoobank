@@ -1,13 +1,13 @@
 import GetStartedButton from "./GetStartedButton"
 import { motion } from "framer-motion"
+import variant from "../utils/motion"
 
 function CTA() {
   return (
     <motion.div 
       className="cta flow box-shadow bg-black-gradient-2"
-      initial={{ y: "10%", opacity: 0 }}
-      whileInView={{ y: "0", opacity: 1 }}
-      transition={{ type: "tween" }}  
+      initial={variant.hidden}
+      whileInView={variant.show}
     >
       <div className="flow cta-content">
         <h1 className="fs-500 fw-600">

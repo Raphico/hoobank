@@ -2,6 +2,7 @@ import { features } from "../constants"
 import FeatureCard from "./FeatureCard"
 import Section from "./Section"
 import { motion } from "framer-motion"
+import variant from "../utils/motion"
 
 function Business() {
 
@@ -15,9 +16,8 @@ function Business() {
   return (
     <motion.div 
       className="even-columns grid"
-      initial={{ y: "10%", opacity: 0 }}
-      whileInView={{ y: "0", opacity: 1 }}
-      transition={{ type: "tween" }}
+      initial={variant.hidden}
+      whileInView={variant.show}
     >
       <div className="flow">
         <Section

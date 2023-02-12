@@ -1,6 +1,7 @@
 import { logo } from "../assets"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import variant from "../utils/motion"
 
 function Navbar() {
   const [showNav, setShowNav] = useState(false)
@@ -11,9 +12,8 @@ function Navbar() {
 
   return (
     <motion.nav 
-      initial={{ y: "10%", opacity: 0 }}
-      whileInView={{ y: "0", opacity: 1 }}
-      transition={{ type: "tween" }}
+      initial={variant.hidden}
+      whileInView={variant.show}
       className="nav flex"
     >
       <div>

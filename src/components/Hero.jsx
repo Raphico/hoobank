@@ -1,14 +1,14 @@
 import { robot, discount } from "../assets"
 import GetStarted from "./GetStarted"
 import { motion } from "framer-motion"
+import variant from "../utils/motion"
 
 function Hero() {
   return (
     <motion.div 
       className="hero grid"
-      initial={{ y: "10%", opacity: 0 }}
-      whileInView={{ y: "0", opacity: 1 }}
-      transition={{ type: "tween" }}
+      initial={variant.hidden}
+      whileInView={variant.show}
     >
       <div>
         <div className="discount bg-discount-gradient">

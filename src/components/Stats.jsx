@@ -1,13 +1,13 @@
 import { motion } from "framer-motion"
 import CountUp from "react-countup"
+import variant from "../utils/motion"
 
 function Stats() {
   return (
     <motion.div 
       className="stats flex"
-      initial={{ y: "10%", opacity: 0 }}
-      whileInView={{ y: "0", opacity: 1 }}
-      transition={{ type: "tween" }}
+      initial={variant.hidden}
+      whileInView={variant.show}
     >
       <div className="stat flex">
         <h2 className="fs-500 fw-600">

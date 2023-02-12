@@ -1,13 +1,13 @@
 import { airbnb, binance, coinbase, dropbox } from "../assets"
 import { motion } from "framer-motion"
+import variant from "../utils/motion"
 
 function Clients() {
   return (
     <motion.div 
       className="clients grid"
-      initial={{ y: "10%", opacity: 0 }}
-      whileInView={{ y: "0", opacity: 1 }}
-      transition={{ type: "tween" }}
+      initial={variant.hidden}
+      whileInView={variant.show}
     >
       <img src={airbnb} alt="airbnb logo" />
       <img src={binance} alt="binance logo" />

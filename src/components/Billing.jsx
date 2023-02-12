@@ -1,5 +1,6 @@
 import { apple, bill, google } from "../assets"
 import { motion } from "framer-motion"
+import variant from "../utils/motion"
 
 function Billing() {
   const style = {
@@ -9,9 +10,8 @@ function Billing() {
   return (
     <motion.div 
       className="even-columns grid"
-      initial={{ y: "10%", opacity: 0 }}
-      whileInView={{ y: "0", opacity: 1 }}
-      transition={{ type: "tween" }}  
+      initial={variant.hidden}
+      whileInView={variant.show}
     >
       <div>
         <img src={bill} alt="bill" />
