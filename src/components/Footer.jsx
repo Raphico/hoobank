@@ -1,11 +1,33 @@
 import { facebook, instagram, linkedin, logo, twitter } from "../assets"
 import { motion } from "framer-motion"
 import variant from "../utils/motion"
+import { footerLinks, socialMedia } from "../constants"
 
 function Footer() {
   const style = {
     "--gap": "1rem"
   }
+
+  const socialElements = socialMedia.map(social => 
+    <div key={social.id} className="flex" style={style}>
+      <a href={social.link}>
+        <img src={social.icon} alt={`${social.icon} link`} />
+      </a>
+    </div>
+  )
+
+  const footerLinkElements = footerLinks.map(footerLink => 
+      <ul key={footerLink.title} role="list">
+        <li className="footer-titling fw-600">{footerLink.title}</li>
+        {footerLink.links.map(link => 
+          <li key={link.name}>
+            <a href={link.link}>
+              {link.name}
+            </a>
+          </li>
+        )}
+      </ul>
+    )
 
   return (
     <motion.footer 
@@ -23,29 +45,7 @@ function Footer() {
         </div>
 
         <div className="footer-links grid">
-          <ul role="list">
-            <li className="footer-titling fw-600">Useful Links</li>
-            <a href="#"><li>Content</li></a>
-            <a href="#"><li>How It Works</li></a>
-            <a href="#"><li>Create</li></a>
-            <a href="#"><li>Explore</li></a>
-            <a href="#"><li>Terms & Services</li></a>
-          </ul>
-
-          <ul role="list">
-            <li className="footer-titling fw-600">Community</li>
-            <a href="#"><li>Help Center</li></a>
-            <a href="#"><li>Partners</li></a>
-            <a href="#"><li>Suggestion</li></a>
-            <a href="#"><li>Blog</li></a>
-            <a href="#"><li>Newsletter</li></a>
-          </ul>
-
-          <ul role="list">
-            <li className="footer-titling fw-600">Partner</li>
-            <a href="#"><li>Our Partner</li></a>
-            <a href="#"><li>Become a Partner</li></a>
-          </ul>
+          {footerLinkElements}
         </div>
       </div>
 
@@ -54,18 +54,7 @@ function Footer() {
       <div className="socials">
         <p>Copyright &#169; 2021 HooBank. All Rights Reserved</p>
         <div className="flex" style={style}>
-          <a href="#">
-            <img src={instagram} alt="instagram logo" />
-          </a>
-          <a href="#">
-            <img src={facebook} alt="facebook logo" />
-          </a>
-          <a href="#">
-            <img src={twitter} alt="twitter logo" />
-          </a>
-          <a href="#">
-            <img src={linkedin} alt="linkedin logo" />
-          </a>
+          {socialElements}
         </div>
       </div>
     </motion.footer>

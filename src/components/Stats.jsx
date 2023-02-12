@@ -13,7 +13,7 @@ function Stats() {
         <h2 className="fs-500 fw-600">
           <CountUp 
             start={0} 
-            end={3800} 
+            end={300} 
             duration={1.5} 
             enableScrollSpy
           />+
@@ -44,7 +44,7 @@ function Stats() {
             end={230} 
             duration={1.5} 
             enableScrollSpy
-          />+
+          />M+
         </h2>
         <h2 className="fs-401 text-gradient">transaction</h2>
       </div>
